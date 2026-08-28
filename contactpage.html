@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Directory & Monitoring</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="student-theme">
+<div class="app-container">
+  <nav>
+    <div class="nav-brand">📞 Contact & Monitoring Directory</div>
+    <div class="nav-links"><a href="javascript:history.back()">⬅️ Back</a></div>
+  </nav>
+
+  <div class="page-content">
+    <div id="studentContactSection" class="section-box">
+      <h3>📌 Student Completed Requirements</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Title</th><th>Status</th></tr></thead>
+        <tbody id="studentCompletedContactBody"></tbody>
+      </table>
+
+      <h3 style="margin-top:25px;">👨‍🏫 Teacher & Officers Information</h3>
+      <p><strong>Adviser Name:</strong> Teacher Ghen</p>
+      <p><strong>Available Hours:</strong> 8:00 AM - 5:00 PM</p>
+      <p><strong>Class Officer:</strong> Juan Dela Cruz (Class President)</p>
+      <p><a href="mailto:teacher@gmail.com" class="btn btn-primary" style="display:inline-block; margin-top:5px; text-decoration:none;">📧 Message via Gmail</a></p>
+
+      <h3 style="margin-top:20px;">👥 Community Links & Pages</h3>
+      <ul>
+        <li><a href="https://m.me/" target="_blank">💬 Messenger Group Chat</a></li>
+        <li><a href="https://facebook.com/" target="_blank">👥 Facebook Page</a></li>
+        <li><a href="https://classroom.google.com/" target="_blank">📚 Google Classroom</a></li>
+      </ul>
+    </div>
+
+    <div id="teacherContactSection" class="section-box">
+      <h3>📊 Teacher Monitoring Matrix (Completed Tasks per Column)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Quiz</th><th>Summative</th><th>Module</th><th>Project</th><th>Written Works</th><th>Exam</th>
+          </tr>
+        </thead>
+        <tbody id="teacherMatrixBody"></tbody>
+      </table>
+
+      <h3 style="margin-top:25px; color:#ef4444;">⚠️ List of Students Pending Summative/Exam</h3>
+      <table>
+        <thead><tr><th>Student Name</th><th>Pending Requirement</th></tr></thead>
+        <tbody id="teacherViewPendingBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+  const role = localStorage.getItem('current_user_role');
+  if (role === 'teacher') {
+    document.body.className = 'teacher-theme';
+    document.getElementById('studentContactSection').style.display = 'none';
+    loadTeacherContactView();
+  } else {
+    document.getElementById('teacherContactSection').style.display = 'none';
+    loadStudentContactView();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Management Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="teacher-theme">
+<div class="app-container">
+  <nav>
+    <div class="nav-brand">👨‍🏫 Teacher Control Center</div>
+    <div class="nav-links">
+      <a href="aboutpage.html">About</a>
+      <a href="contactpage.html">Contact/Monitor</a>
+      <a href="#" onclick="logoutUser(event)">Logout</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="section-box">
+      <h3>➕ Add New Task</h3>
+      <form onsubmit="addNewTask(event)" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
+        <select id="taskCategory" required>
+          <option value="Project">Project</option>
+          <option value="WrittenWorks">Written Works</option>
+          <option value="Module">Module</option>
+          <option value="Quiz">Quiz</option>
+          <option value="Summative">Summative</option>
+          <option value="Exam">Exam</option>
+        </select>
+        <input type="text" id="taskTitle" placeholder="Task Title" required>
+        <input type="date" id="taskDeadline" required>
+        <button type="submit" class="btn btn-success">+ Save & Post Task</button>
+      </form>
+    </div>
+
+    <h2>📊 Teacher Tasks Dashboard</h2>
+    <div class="category-grid">
+      <div class="section-box"><h3>🚀 Projects</h3><div id="teach-cat-Project"></div></div>
+      <div class="section-box"><h3>📝 Written Works</h3><div id="teach-cat-WrittenWorks"></div></div>
+      <div class="section-box"><h3>📚 Modules</h3><div id="teach-cat-Module"></div></div>
+      <div class="section-box"><h3>🧠 Quizzes</h3><div id="teach-cat-Quiz"></div></div>
+      <div class="section-box"><h3>📊 Summatives</h3><div id="teach-cat-Summative"></div></div>
+      <div class="section-box"><h3>⚡ Major Exams</h3><div id="teach-cat-Exam"></div></div>
+    </div>
+
+    <div class="section-box" style="margin-top: 30px;">
+      <h3>📋 Student Roster (Summative & Exam Checker)</h3>
+      <form onsubmit="addStudentToRoster(event)" style="display:flex; gap:10px; margin: 15px 0;">
+        <input type="text" id="rosterName" placeholder="Student Name" required style="width: 300px;">
+        <button type="submit" class="btn btn-primary">+ Add to Roster</button>
+      </form>
+      <table>
+        <thead>
+          <tr><th>Student Name</th><th>Summative Status</th><th>Exam Status</th></tr>
+        </thead>
+        <tbody id="teacherCheckerBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>loadTeacherPage();</script>
+</body>
+</html>

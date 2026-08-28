@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="student-theme">
+<div class="app-container">
+  <nav>
+    <div class="nav-brand">🎓 Student Portal</div>
+    <div class="nav-links">
+      <a href="aboutpage.html">About</a>
+      <a href="contactpage.html">Contact</a>
+      <a href="#" onclick="logoutUser(event)">Logout</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div id="studentNotifBox" class="notif-toast" style="display: none;"></div>
+
+    <h2>📌 Active Class Requirements</h2>
+    <div class="category-grid">
+      <div class="section-box"><h3>🚀 Projects</h3><div id="stud-cat-Project"></div></div>
+      <div class="section-box"><h3>📝 Written Works</h3><div id="stud-cat-WrittenWorks"></div></div>
+      <div class="section-box"><h3>📚 Modules</h3><div id="stud-cat-Module"></div></div>
+      <div class="section-box"><h3>🧠 Quizzes</h3><div id="stud-cat-Quiz"></div></div>
+      <div class="section-box"><h3>📊 Summatives</h3><div id="stud-cat-Summative"></div></div>
+      <div class="section-box"><h3>⚡ Major Exams</h3><div id="stud-cat-Exam"></div></div>
+    </div>
+
+    <div class="section-box" style="margin-top: 30px;">
+      <h3>✅ Completed Requirements (Done)</h3>
+      <div id="stud-done-list"></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>loadStudentPage();</script>
+</body>
+</html>
