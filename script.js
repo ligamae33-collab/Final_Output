@@ -52,7 +52,7 @@ function logoutUser(e) {
   if (e) e.preventDefault();
   localStorage.removeItem('current_user_role');
   localStorage.removeItem('current_student_name');
-  window.location.href = 'logIn.html';
+  window.location.href = 'index.html';
 }
 
 // --- DYNAMIC DEADLINE THEME EVALUATOR ---
